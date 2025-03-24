@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">TaxCalculator</string>
     <string name="tentang_aplikasi">Tentang Aplikasi</string>
+    <string name="copyright">Aplikasi ini adalah aplikasi kalkulator pajak sederhana
+        untuk memenuhi tugas mata kuliah Pemrograman Mobile. by Andre copyright ©2025</string>
+    <string name="pajak_type">Select Type</string>
+    <string name="pajak_percentage">Select Percentage</string>
+    <string name="calculate_tax">Calculate Tax</string>
+    <string name="placeholder">Enter Income</string>
 </resources>
