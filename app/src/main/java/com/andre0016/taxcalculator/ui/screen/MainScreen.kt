@@ -28,16 +28,22 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableDoubleStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.KeyboardType
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
 import com.andre0016.taxcalculator.R
+import com.andre0016.taxcalculator.navigation.Screen
+import com.andre0016.taxcalculator.ui.theme.TaxCalculatorTheme
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun MainScreen() {
+fun MainScreen(navController: NavHostController) {
     Scaffold(
         topBar = {
             TopAppBar(
@@ -48,7 +54,9 @@ fun MainScreen() {
                     containerColor = MaterialTheme.colorScheme.primaryContainer
                 ),
                 actions = {
-                    IconButton(onClick = {}) {
+                    IconButton(onClick = {
+                        navController.navigate(Screen.About.route)
+                    }) {
                         Icon(
                             imageVector = Icons.Outlined.Info,
                             contentDescription = stringResource(R.string.tentang_aplikasi),
@@ -65,10 +73,10 @@ fun MainScreen() {
 
 @Composable
 fun TaxCalculatorApp(modifier: Modifier = Modifier) {
-    var income by remember { mutableStateOf("") }
-    var selectedTaxType by remember { mutableStateOf("Pajak Penghasilan (PPH)") }
-    var selectedTaxRate by remember { mutableStateOf("5%") }
-    var taxResult by remember { mutableDoubleStateOf(0.0) }
+    var income by rememberSaveable { mutableStateOf("") }
+    var selectedTaxType by rememberSaveable { mutableStateOf("Pajak Penghasilan (PPH)") }
+    var selectedTaxRate by rememberSaveable { mutableStateOf("5%") }
+    var taxResult by rememberSaveable { mutableDoubleStateOf(0.0) }
 
     val taxTypes = listOf("Pajak Penghasilan (PPH)", "Pajak Pertambahan Nilai (PPN)")
     val taxRates = listOf("5%", "15%", "25%", "30%")
@@ -184,4 +192,12 @@ fun calculatePPH(income: Double, taxRate: String): Double {
 // Perhitungan Pajak Pertambahan Nilai (PPN) - 11% dari penghasilan
 fun calculatePPN(income: Double): Double {
     return income * 0.11
+}
+
+@Preview(showBackground = true)
+@Composable
+fun ScreenPreview() {
+    TaxCalculatorTheme {
+        MainScreen(rememberNavController())
+    }
 }
