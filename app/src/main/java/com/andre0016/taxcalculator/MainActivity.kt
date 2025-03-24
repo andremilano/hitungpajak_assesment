@@ -6,7 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
-import com.andre0016.taxcalculator.ui.screen.MainScreen
+import com.andre0016.taxcalculator.navigation.SetupNavGraph
 import com.andre0016.taxcalculator.ui.theme.TaxCalculatorTheme
 
 class MainActivity : ComponentActivity() {
@@ -15,7 +15,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             TaxCalculatorTheme {
-                MainScreen()
+                SetupNavGraph()
             }
         }
     }
@@ -26,6 +26,6 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun GreetingPreview() {
     TaxCalculatorTheme {
-        MainScreen()
+        SetupNavGraph()
     }
 }
