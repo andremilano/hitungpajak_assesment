@@ -1,5 +1,7 @@
 package com.andre0016.taxcalculator.ui.screen
 
+import android.content.Context
+import android.content.Intent
 import android.widget.Toast
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
@@ -186,8 +188,20 @@ fun TaxCalculatorApp(modifier: Modifier = Modifier) {
             // Hasil Pajak
             Text(
                 text = stringResource(R.string.tax_result, taxResult),
-                style = MaterialTheme.typography.bodyLarge
-            )
+                style = MaterialTheme.typography.bodyLarge)
+            Button(
+                onClick = {
+                    shareData(
+                        context = context,
+                        message = context.getString(R.string.share__template, income, selectedTaxType, selectedTaxRate, taxResult)
+                    )
+                },
+                modifier = Modifier.fillMaxWidth()
+            ) {
+                Text(
+                    text = stringResource(R.string.share),
+                    style = MaterialTheme.typography.bodyMedium)
+            }
         }
     }
 }
@@ -234,6 +248,16 @@ fun calculatePPH(income: Double, taxRate: String): Double {
 // Perhitungan Pajak Pertambahan Nilai (PPN) - 11% dari penghasilan
 fun calculatePPN(income: Double): Double {
     return income * 0.11
+}
+
+private fun shareData(context: Context, message: String) {
+    val shareIntent = Intent(Intent.ACTION_SEND).apply {
+        type = "text/plain"
+        putExtra(Intent.EXTRA_TEXT, message)
+    }
+    if (shareIntent.resolveActivity(context.packageManager) != null) {
+        context.startActivity(shareIntent)
+    }
 }
 
 //@Composable
