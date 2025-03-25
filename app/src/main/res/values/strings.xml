@@ -7,6 +7,10 @@
     <string name="pajak_percentage">Select Percentage</string>
     <string name="calculate_tax">Calculate Tax</string>
     <string name="placeholder">Enter Income</string>
+    <string name="gambar_latar">Background image</string>
+    <string name="tax_result">Tax Payable: %1.2f</string>
+    <string name="reset">Reset</string>
+    <string name="input_invalid">Input Invalid</string>
 
 <!--    icon -->
     <string name="kembali">Back</string>
