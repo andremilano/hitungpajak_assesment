@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Kalkulator Pajak</string>
+    <string name="tentang_aplikasi">Tentang Aplikasi</string>
+    <string name="pajak_type">Pilih Tipe</string>
+    <string name="pajak_percentage">Pilih Persentase</string>
+    <string name="calculate_tax">Hitung Pajak</string>
+    <string name="placeholder">Masukkan Pendapatan</string>
+    <string name="gambar_latar">Latar Belakang</string>
+    <string name="reset">Reset</string>
+    <string name="input_invalid">Input Tidak Valid</string>
+    <string name="share">Bagikan</string>
+    <string name="kembali">Kembali</string>
+</resources>

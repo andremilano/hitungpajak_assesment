@@ -1,18 +1,18 @@
 <resources>
     <string name="app_name">TaxCalculator</string>
     <string name="tentang_aplikasi">About App</string>
-    <string name="copyright">Aplikasi ini adalah aplikasi kalkulator pajak sederhana
+    <string name="copyright" translatable="false">Aplikasi ini adalah aplikasi kalkulator pajak sederhana
         untuk memenuhi tugas mata kuliah Pemrograman Mobile. by Andre copyright ©2025</string>
     <string name="pajak_type">Select Type</string>
     <string name="pajak_percentage">Select Percentage</string>
     <string name="calculate_tax">Calculate Tax</string>
     <string name="placeholder">Enter Income</string>
     <string name="gambar_latar">Background image</string>
-    <string name="tax_result">Tax Payable: %1.2f</string>
+    <string name="tax_result" translatable="false">Tax Payable: %1.2f</string>
     <string name="reset">Reset</string>
     <string name="input_invalid">Input Invalid</string>
     <string name="share">Share</string>
-    <string name="share__template">Your Income: Rp. %1$s \nType: %2$s \nPercentage: %3$s \nTax Payable: %4$.2f</string>
+    <string name="share__template" translatable="false">Your Income: Rp. %1$s \nType: %2$s \nPercentage: %3$s \nTax Payable: %4$.2f</string>
 
 <!--    icon -->
     <string name="kembali">Back</string>
