@@ -16,4 +16,5 @@
 
 <!--    icon -->
     <string name="kembali">Back</string>
+    <string name="arrow_down" translatable="false">Arrow Down</string>
 </resources>
